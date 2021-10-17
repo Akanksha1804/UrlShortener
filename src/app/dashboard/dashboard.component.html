@@ -1,0 +1,44 @@
+
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">URL List</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Short URL</th>
+                            <th>Long URL</th>
+                            <th>clicks</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Short URL</th>
+                            <th>Long URL</th>
+                            <th>clicks</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+                        <tr *ngFor="let url of urlList">
+                            <td>{{url.id}}</td>
+                            <td>
+                                <a  (click)="updateClicks(url.id,url.short,url.long,url.clicks)">
+                                    {{url.short}}
+                                </a>
+                            </td>
+                            <td>{{url.long}}</td>
+                            <td >{{url.clicks}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
